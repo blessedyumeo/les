@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Échos Du Passé — интернет-магазин одежды</title>
+  <meta name="description" content="Учебный интернет-магазин одежды: каталог, страница товара и корзина с сохранением между сессиями. Вёрстка на HTML, CSS и чистом JavaScript.">
+  <meta name="theme-color" content="#f6f5f3">
+  <link rel="icon" href="images/logo.png">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Порядок важен: сначала каталог товаров, потом всё остальное. -->
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/shop.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="preloader">
+    <div>
+      <img src="images/logo.png" alt="" class="preloader__logo" width="68" height="68">
+      <div class="preloader__spinner"></div>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#catalog">К каталогу</a>
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#catalog" class="site-nav__link">Каталог</a>
+        <a href="#about" class="site-nav__link">О бренде</a>
+      </nav>
+
+      <a href="index.html" class="site-logo" aria-label="Les Échos Du Passé — на главную">
+        <img src="images/logo.png" alt="Les Échos Du Passé" width="42" height="42">
+      </a>
+
+      <div class="site-actions">
+        <a href="https://t.me/Yoiyumeo" class="icon-link" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21.9 4.3 18.8 19c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-.9.5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 13 2.3 11.5c-1-.3-1-1 .2-1.5L20.6 3c.8-.3 1.5.2 1.3 1.3Z"/>
+          </svg>
+        </a>
+
+        <button type="button" class="icon-link cart-button" id="cart-button" aria-label="Корзина пуста">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6.5 2.5 3.5 6.5v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-13l-3-4Z"/>
+            <path d="M3.5 6.5h17"/>
+            <path d="M16 10.5a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-counter is-empty">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>New collection soon</span><span>·</span><span>Ручная печать</span><span>·</span>
+      <span>Доставка по России</span><span>·</span>
+      <span>New collection soon</span><span>·</span><span>Ручная печать</span><span>·</span>
+      <span>Доставка по России</span><span>·</span>
+    </div>
+  </div>
+
+  <section class="hero shell">
+    <p class="hero__eyebrow">Коллекция 2026</p>
+    <h1 class="hero__title">Les Échos<br>Du Passé</h1>
+    <p class="hero__text">Небольшие партии, плотные ткани и печать, сделанная вручную. Каждая вещь немного отличается от соседней — так и задумано.</p>
+  </section>
+
+  <section class="slider" data-slider aria-label="Фотографии коллекции">
+    <div class="slider__track" data-slider-track>
+      <div class="slide"><img src="images/look-1.webp" alt="Образ из коллекции 1" loading="lazy"></div>
+      <div class="slide"><img src="images/look-2.webp" alt="Образ из коллекции 2" loading="lazy"></div>
+      <div class="slide"><img src="images/look-3.webp" alt="Образ из коллекции 3" loading="lazy"></div>
+      <div class="slide"><img src="images/look-4.webp" alt="Образ из коллекции 4" loading="lazy"></div>
+      <div class="slide"><img src="images/look-5.webp" alt="Образ из коллекции 5" loading="lazy"></div>
+      <div class="slide"><img src="images/look-6.webp" alt="Образ из коллекции 6" loading="lazy"></div>
+      <div class="slide"><img src="images/look-7.webp" alt="Образ из коллекции 7" loading="lazy"></div>
+      <div class="slide"><img src="images/look-8.webp" alt="Образ из коллекции 8" loading="lazy"></div>
+      <div class="slide"><img src="images/look-9.webp" alt="Образ из коллекции 9" loading="lazy"></div>
+    </div>
+    <button class="slider__nav slider__nav--prev" type="button" data-slider-prev aria-label="Назад">‹</button>
+    <button class="slider__nav slider__nav--next" type="button" data-slider-next aria-label="Вперёд">›</button>
+  </section>
+
+  <main>
+    <section class="catalog shell" id="catalog">
+      <div class="section-head">
+        <h2 class="section-title">Каталог</h2>
+        <p class="section-meta" data-catalog-count></p>
+      </div>
+
+      <div class="grid" id="catalog-grid">
+        <noscript><p>Для просмотра каталога включите JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <section class="about shell" id="about">
+      <div class="about__inner">
+        <h2 class="section-title">О бренде</h2>
+        <p>Les Échos Du Passé — небольшой независимый бренд. Вещи отшиваются партиями по несколько десятков штук, принты наносятся вручную, поэтому двух одинаковых не бывает.</p>
+        <p>Сайт сделан как учебный проект: вёрстка на чистых HTML, CSS и JavaScript, без фреймворков и сборщиков. Каталог, карточка товара и корзина работают на одном источнике данных, корзина сохраняется между сессиями.</p>
+        <a class="btn btn--ghost" href="https://t.me/Yoiyumeo" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="site-footer__cols">
+        <div class="site-footer__brand">
+          <img src="images/logo.png" alt="Les Échos Du Passé" width="48" height="48">
+          <p>Небольшой независимый бренд одежды. Учебный проект.</p>
+        </div>
+
+        <div>
+          <h3>Магазин</h3>
+          <ul>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#about">О бренде</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Связь</h3>
+          <ul>
+            <li><a href="https://t.me/Yoiyumeo" target="_blank" rel="noopener">Telegram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <span>© 2026 Les Échos Du Passé</span>
+        <span>HTML · CSS · JavaScript</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
